@@ -41,17 +41,28 @@ const truthValuesOf = function (numbers) {
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 const reverse = function (string) {
-  return [...string].reverse().join();
-}
+  return [...string].reverse().join("");
+};
 
 const reversedStringsOf = function (strings) {
   return strings.map(reverse);
 };
 
-console.log(reversedStringsOf(["hello", "world"]));
+// console.log(reversedStringsOf(["hello", "world"]));
 
 // double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
-const doubleLettersOf = function (strings) { };
+const doubleLettersString = function (string) {
+  let doubleLetterString = "";
+  for (const char of string) {
+    doubleLetterString += char + char;
+  }
+
+  return doubleLetterString;
+}
+
+const doubleLettersOf = function (strings) {
+  return strings.map(doubleLettersString);
+};
 
 // boolean negation of [true, false, true] => [false, true, false]
 const negatedBooleansOf = function (booleans) { };
