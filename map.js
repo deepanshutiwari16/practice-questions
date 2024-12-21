@@ -1,6 +1,6 @@
 // squares of [1, 2, 3] => [1, 4, 9]
 const squaresOf = function (numbers) {
-  return numbers.map(function (number) {return Math.pow(number, 2)}); 
+  return numbers.map(function (number) { return Math.pow(number, 2) });
 };
 
 // console.log(squaresOf([1, 2, 3]));
@@ -8,7 +8,7 @@ const squaresOf = function (numbers) {
 
 // lengths of ["apple", "banana", "kiwi"] => [5, 6, 4]
 const lengthsOf = function (strings) {
-  return strings.map(function (string) {return string.length});
+  return strings.map(function (string) { return string.length });
 };
 
 // console.log(lengthsOf(["apple", "banana", "kiwi"]));
@@ -16,14 +16,14 @@ const lengthsOf = function (strings) {
 
 // uppercase of ["hello", "world"] => ["HELLO", "WORLD"]
 const uppercaseOf = function (strings) {
-  return strings.map(function (string) {return string.toUpperCase()})
+  return strings.map(function (string) { return string.toUpperCase() })
 };
 
 // console.log(uppercaseOf(["hello", "world"]));
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
 const firstCharactersOf = function (strings) {
-  return strings.map(function (word) {return word.at(0)});
+  return strings.map(function (word) { return word.at(0) });
 };
 
 // console.log(firstCharactersOf(["apple", "banana", "kiwi"]));
@@ -37,10 +37,23 @@ const truthValuesOf = function (numbers) {
   return numbers.map(booleanValues);
 };
 
-console.log(truthValuesOf([0, 1, 2, 3]));
+// console.log(truthValuesOf([0, 1, 2, 3]));
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
-const reversedStringsOf = function (strings) { };
+const reverse = function (string) {
+  let reversedString = "";
+  for (const char of string) {
+    reversedString = char + reversedString;
+  }  
+
+  return reversedString;
+}
+
+const reversedStringsOf = function (strings) {
+  return strings.map(reverse);
+};
+
+console.log(reversedStringsOf(["hello", "world"]));
 
 // double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
 const doubleLettersOf = function (strings) { };
