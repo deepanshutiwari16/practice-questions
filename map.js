@@ -65,7 +65,7 @@ const doubleLettersOf = function (strings) {
 };
 
 // boolean negation of [true, false, true] => [false, true, false]
-const negatedBooleansOf = function (booleans) { 
+const negatedBooleansOf = function (booleans) {
   return booleans.map(function (boolean) {
     return !boolean;
   })
@@ -74,7 +74,12 @@ const negatedBooleansOf = function (booleans) {
 
 // character codes of ["a", "b", "c"] => [97, 98, 99]
 // Use the `charCodeAt` method on each string
-const charCodesOf = function (strings) { };
+
+const charCodesOf = function (strings) {
+  return strings.map(function (character) {    
+    return character.charCodeAt(0);
+  })
+};
 
 // extract domain names from ["user1@gmail.com", "admin@yahoo.com"] => ["gmail.com", "yahoo.com"]
 const domainNamesOf = function (emails) { };
