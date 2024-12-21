@@ -119,17 +119,13 @@ const isVowel = function (charater) {
   return "aeiou".includes(charater);
 };
 
+const getCount = function (count, character) {
+  return isVowel(character) ? count + 1 : count;
+}
+
 const countVowel = function (word) {
   const array = [...word.toLowerCase()];
-  let count = 0;
-
-  for (let index = 0; index <= array.length - 1; index++) {
-    if (isVowel(array[index])) {
-      count += 1;
-    }
-  }
-
-  return count;
+  return array.reduce(getCount, 0);
 };
 
 const countVowelsOf = function (strings) {
