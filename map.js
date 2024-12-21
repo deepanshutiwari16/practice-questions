@@ -98,6 +98,7 @@ const splitWordsOf = function (strings) {
 };
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
+
 const joinedArraysOf = function (arrayOfArrays) { 
   return arrayOfArrays.map(function (array) {
     return array.join("");
@@ -105,7 +106,12 @@ const joinedArraysOf = function (arrayOfArrays) {
 };
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
-const repeatedStringsOf = function (strings) { };
+
+const repeatedStringsOf = function (strings) { 
+  return strings.map(function (word) {
+    return word + word;
+  })
+};
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
 const countVowelsOf = function (strings) { };
