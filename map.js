@@ -71,7 +71,6 @@ const negatedBooleansOf = function (booleans) {
   })
 };
 
-
 // character codes of ["a", "b", "c"] => [97, 98, 99]
 // Use the `charCodeAt` method on each string
 
@@ -98,9 +97,12 @@ const splitWordsOf = function (strings) {
   });
 };
 
-
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
-const joinedArraysOf = function (arrayOfArrays) { };
+const joinedArraysOf = function (arrayOfArrays) { 
+  return arrayOfArrays.map(function (array) {
+    return array.join("");
+  })
+};
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
 const repeatedStringsOf = function (strings) { };
