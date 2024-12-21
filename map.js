@@ -84,14 +84,14 @@ const charCodesOf = function (strings) {
 
 const domainNamesOf = function (emails) {
   return emails.map(function (email) {
-    const index = email.indexOf("@"); 
+    const index = email.indexOf("@");
     return email.slice(index + 1);
   });
 };
 
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
 
-const splitWordsOf = function (strings) { 
+const splitWordsOf = function (strings) {
   return strings.map(function (word) {
     return word.split(" ");
   });
@@ -99,7 +99,7 @@ const splitWordsOf = function (strings) {
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
 
-const joinedArraysOf = function (arrayOfArrays) { 
+const joinedArraysOf = function (arrayOfArrays) {
   return arrayOfArrays.map(function (array) {
     return array.join("");
   })
@@ -107,14 +107,34 @@ const joinedArraysOf = function (arrayOfArrays) {
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
 
-const repeatedStringsOf = function (strings) { 
+const repeatedStringsOf = function (strings) {
   return strings.map(function (word) {
     return word + word;
   })
 };
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
-const countVowelsOf = function (strings) { };
+
+const isVowel = function (charater) {
+  return "aeiou".includes(charater);
+};
+
+const countVowel = function (word) {
+  const array = [...word.toLowerCase()];
+  let count = 0;
+
+  for (let index = 0; index <= array.length - 1; index++) {
+    if (isVowel(array[index])) {
+      count += 1;
+    }
+  }
+
+  return count;
+};
+
+const countVowelsOf = function (strings) {
+  return strings.map(countVowel);
+};
 
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
 const reversedArraysOf = function (arrays) { };
