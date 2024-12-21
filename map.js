@@ -41,12 +41,7 @@ const truthValuesOf = function (numbers) {
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 const reverse = function (string) {
-  let reversedString = "";
-  for (const char of string) {
-    reversedString = char + reversedString;
-  }  
-
-  return reversedString;
+  return [...string].reverse().join();
 }
 
 const reversedStringsOf = function (strings) {
