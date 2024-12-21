@@ -22,11 +22,22 @@ const uppercaseOf = function (strings) {
 // console.log(uppercaseOf(["hello", "world"]));
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
-const firstCharactersOf = function (strings) { };
+const firstCharactersOf = function (strings) {
+  return strings.map(function (word) {return word.at(0)});
+};
+
+// console.log(firstCharactersOf(["apple", "banana", "kiwi"]));
 
 // truth values of [0, 1, 2, 3] => [false, true, true, true]
 // Assume non-zero numbers are true, and zero is false
-const truthValuesOf = function (numbers) { };
+const booleanValues = function (number) {
+  return number !== 0;
+}
+const truthValuesOf = function (numbers) {
+  return numbers.map(booleanValues);
+};
+
+console.log(truthValuesOf([0, 1, 2, 3]));
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 const reversedStringsOf = function (strings) { };
