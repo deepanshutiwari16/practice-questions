@@ -82,16 +82,22 @@ const charCodesOf = function (strings) {
 };
 
 // extract domain names from ["user1@gmail.com", "admin@yahoo.com"] => ["gmail.com", "yahoo.com"]
+
 const domainNamesOf = function (emails) {
   return emails.map(function (email) {
     const index = email.indexOf("@"); 
     return email.slice(index + 1);
-  })
+  });
 };
 
-
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
-const splitWordsOf = function (strings) { };
+
+const splitWordsOf = function (strings) { 
+  return strings.map(function (word) {
+    return word.split(" ");
+  });
+};
+
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
 const joinedArraysOf = function (arrayOfArrays) { };
