@@ -14,14 +14,21 @@ const filterLongWords = function (words) {
 
 const isAdult = function (record) {
   return record.age > 30;
-}
+};
 
 const filterAdults = function (people) { 
   return people.filter(isAdult);
 };
 
 // active users [{username: "alice", active: true}, {username: "bob", active: false}] => [{username: "alice", active: true}]
-const filterActiveUsers = function (users) { };
+
+const isUserActive = function (userDetail) {
+  return userDetail.active;
+}
+
+const filterActiveUsers = function (users) { 
+  return users.filter(isUserActive);
+};
 
 // numbers greater than 10 [5, 12, 7, 18, 3] => [12, 18]
 const filterNumbersGreaterThanTen = function (numbers) { };
