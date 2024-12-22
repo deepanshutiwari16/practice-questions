@@ -163,7 +163,14 @@ const filterPopularPosts = function (posts) { };
 const filterActiveUsersByPostCount = function (users) { };
 
 // filter people older than a certain age [{name: "Alice", age: 25}, {name: "Bob", age: 30}, {name: "Charlie", age: 22}] => [{name: "Bob", age: 30}]
-const filterByAge = function (people, age) { };
+
+const filterByAge = function (people, age) {
+  return people.filter(function (person) {
+    return person.age > age;
+  });
+};
+
+// console.log(filterByAge([{ name: "Alice", age: 25 }, { name: "Bob", age: 30 }, { name: "Charlie", age: 22 }], 22));
 
 // filter products that are cheaper than a given price [{name: "item1", price: 20}, {name: "item2", price: 50}, {name: "item3", price: 10}] => [{name: "item1", price: 20}, {name: "item3", price: 10}]
 const filterByPrice = function (products, price) { };
@@ -430,7 +437,20 @@ const findLongTermEmployees = function (employees, lookup) { };
 // Find cities with a population greater than a threshold provided in the lookup object.
 // Input: ["London", "Paris", "Tokyo"], { "London": { population: 9000000 }, "Paris": { population: 2200000 }, "Tokyo": { population: 14000000 } }
 // Output: ["London", "Tokyo"]
-const findLargeCities = function (cities, lookup) { };
+
+const findLargeCities = function (cities, lookup, threshold) {
+  return cities.filter(function (city) {
+    return lookup[city].population > threshold;
+  });
+};
+
+// console.log(findLargeCities(["London", "Paris", "Tokyo"],
+//   {
+//     "London": { population: 9000000 },
+//     "Paris": { population: 2200000 },
+//     "Tokyo": { population: 14000000 }
+//   },
+//   1000000));
 
 // Find items in an inventory whose quantity is greater than 10 based on the lookup object.
 // Input: ["item1", "item2", "item3"], { "item1": { quantity: 15 }, "item2": { quantity: 5 }, "item3": { quantity: 20 } }
