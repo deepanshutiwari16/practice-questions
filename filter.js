@@ -1,13 +1,13 @@
 // even numbers [1, 2, 3, 4, 5] => [2, 4]
 
-const filterEvenNumbers = function (numbers) { 
-  return numbers.filter(function (element) {return element % 2 === 0});
+const filterEvenNumbers = function (numbers) {
+  return numbers.filter(function (element) { return element % 2 === 0 });
 };
 
 // words with more than 5 letters ["apple", "banana", "kiwi", "grape"] => ["banana"]
 
-const filterLongWords = function (words) { 
-  return words.filter(function (word) {return word.length > 5});
+const filterLongWords = function (words) {
+  return words.filter(function (word) { return word.length > 5 });
 };
 
 // people older than 30 [{name: "Alice", age: 25}, {name: "Bob", age: 35}] => [{name: "Bob", age: 35}]
@@ -16,7 +16,7 @@ const isAdult = function (record) {
   return record.age > 30;
 };
 
-const filterAdults = function (people) { 
+const filterAdults = function (people) {
   return people.filter(isAdult);
 };
 
@@ -26,7 +26,7 @@ const isUserActive = function (userDetail) {
   return userDetail.active;
 };
 
-const filterActiveUsers = function (users) { 
+const filterActiveUsers = function (users) {
   return users.filter(isUserActive);
 };
 
@@ -36,7 +36,7 @@ const isGreaterThan10 = function (number) {
   return number > 10;
 };
 
-const filterNumbersGreaterThanTen = function (numbers) { 
+const filterNumbersGreaterThanTen = function (numbers) {
   return numbers.filter(isGreaterThan10);
 };
 
@@ -46,7 +46,7 @@ const isALongBook = function (bookDetail) {
   return bookDetail.pages > 200;
 };
 
-const filterLongBooks = function (books) { 
+const filterLongBooks = function (books) {
   return books.filter(isALongBook);
 };
 
@@ -56,17 +56,17 @@ const isProileComplete = function (userDetail) {
   return !userDetail.profileComplete;
 };
 
-const filterIncompleteProfiles = function (users) { 
+const filterIncompleteProfiles = function (users) {
   return users.filter(isProileComplete);
 };
 
 // students with grades above 80 [{name: "John", grade: 75}, {name: "Jane", grade: 85}] => [{name: "Jane", grade: 85}]
 
 const isGradeAbove80 = function (studentDetail) {
- return studentDetail.grade > 80;
+  return studentDetail.grade > 80;
 };
 
-const filterHighGrades = function (students) { 
+const filterHighGrades = function (students) {
   return students.filter(isGradeAbove80);
 };
 
@@ -76,7 +76,7 @@ const isProductInStock = function (productDetail) {
   return productDetail.inStock;
 };
 
-const filterInStockProducts = function (products) { 
+const filterInStockProducts = function (products) {
   return products.filter(isProductInStock);
 };
 
@@ -99,7 +99,7 @@ const isAllSubjectPassed = function (studentDetail) {
   return studentDetail.subjects.every(isPassed);
 }
 
-const filterStudentsWithAllSubjectsPassed = function (students) { 
+const filterStudentsWithAllSubjectsPassed = function (students) {
   return students.filter(isAllSubjectPassed);
 };
 
@@ -110,12 +110,28 @@ const isBirthdayThisMonth = function (detail) {
   return month === "12";
 };
 
-const filterBirthdaysThisMonth = function (people) { 
+const filterBirthdaysThisMonth = function (people) {
   return people.filter(isBirthdayThisMonth);
 };
 
 // orders that exceed the average order value [{orderId: 1, amount: 20}, {orderId: 2, amount: 50}, {orderId: 3, amount: 10}] => [{orderId: 2, amount: 50}]
-const filterHighValueOrders = function (orders) { };
+
+const getTotalAmount = function (total, amount) {
+  return total + amount;
+};
+
+const getAmounts = function (order) {
+  return order.amount;
+};
+
+const filterHighValueOrders = function (orders) {
+  const totalAmount = orders.map(getAmounts).reduce(getTotalAmount, 0);
+  const average = totalAmount / orders.length;
+
+  return orders.filter(function (order) {
+    return order.amount > average;
+  });
+};
 
 // books with reviews higher than the average rating [{title: "Book 1", rating: 4}, {title: "Book 2", rating: 5}, {title: "Book 3", rating: 3}] => [{title: "Book 2", rating: 5}]
 const filterTopRatedBooks = function (books) { };
