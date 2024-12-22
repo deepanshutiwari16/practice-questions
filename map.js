@@ -1,6 +1,6 @@
 // squares of [1, 2, 3] => [1, 4, 9]
 const squaresOf = function (numbers) {
-  return numbers.map(function (number) { return Math.pow(number, 2) });
+  return numbers.map(function (number) { return Math.pow(number, 2); });
 };
 
 // console.log(squaresOf([1, 2, 3]));
@@ -8,7 +8,7 @@ const squaresOf = function (numbers) {
 
 // lengths of ["apple", "banana", "kiwi"] => [5, 6, 4]
 const lengthsOf = function (strings) {
-  return strings.map(function (string) { return string.length });
+  return strings.map(function (string) { return string.length; });
 };
 
 // console.log(lengthsOf(["apple", "banana", "kiwi"]));
@@ -16,14 +16,14 @@ const lengthsOf = function (strings) {
 
 // uppercase of ["hello", "world"] => ["HELLO", "WORLD"]
 const uppercaseOf = function (strings) {
-  return strings.map(function (string) { return string.toUpperCase() })
+  return strings.map(function (string) { return string.toUpperCase(); });
 };
 
 // console.log(uppercaseOf(["hello", "world"]));
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
 const firstCharactersOf = function (strings) {
-  return strings.map(function (word) { return word.at(0) });
+  return strings.map(function (word) { return word.at(0); });
 };
 
 // console.log(firstCharactersOf(["apple", "banana", "kiwi"]));
@@ -32,7 +32,7 @@ const firstCharactersOf = function (strings) {
 // Assume non-zero numbers are true, and zero is false
 const booleanValues = function (number) {
   return number !== 0;
-}
+};
 const truthValuesOf = function (numbers) {
   return numbers.map(booleanValues);
 };
@@ -51,14 +51,12 @@ const reversedStringsOf = function (strings) {
 // console.log(reversedStringsOf(["hello", "world"]));
 
 // double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
-const doubleLettersString = function (string) {
-  let doubleLetterString = "";
-  for (const char of string) {
-    doubleLetterString += char + char;
-  }
 
-  return doubleLetterString;
-}
+const doubleLettersString = function (string) {
+  return [...string].map(function (character) {
+    return character.repeat(2);
+  }).join("");
+};
 
 const doubleLettersOf = function (strings) {
   return strings.map(doubleLettersString);
@@ -68,7 +66,7 @@ const doubleLettersOf = function (strings) {
 const negatedBooleansOf = function (booleans) {
   return booleans.map(function (boolean) {
     return !boolean;
-  })
+  });
 };
 
 // character codes of ["a", "b", "c"] => [97, 98, 99]
@@ -77,7 +75,7 @@ const negatedBooleansOf = function (booleans) {
 const charCodesOf = function (strings) {
   return strings.map(function (character) {
     return character.charCodeAt(0);
-  })
+  });
 };
 
 // extract domain names from ["user1@gmail.com", "admin@yahoo.com"] => ["gmail.com", "yahoo.com"]
@@ -102,7 +100,7 @@ const splitWordsOf = function (strings) {
 const joinedArraysOf = function (arrayOfArrays) {
   return arrayOfArrays.map(function (array) {
     return array.join("");
-  })
+  });
 };
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
@@ -110,7 +108,7 @@ const joinedArraysOf = function (arrayOfArrays) {
 const repeatedStringsOf = function (strings) {
   return strings.map(function (word) {
     return word + word;
-  })
+  });
 };
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
@@ -121,7 +119,7 @@ const isVowel = function (charater) {
 
 const getCount = function (count, character) {
   return isVowel(character) ? count + 1 : count;
-}
+};
 
 const countVowel = function (word) {
   const array = [...word];
@@ -164,7 +162,7 @@ const calculateSum = function () {
   return function (number) {
     sum += number;
     return sum;
-  }
+  };
 };
 
 const getCumulativeSum = function (numbers) {
@@ -188,7 +186,7 @@ const getUniqueString = function () {
     const characterToAdd = string.includes(character) ? "" : character;
     string = string + character;
     return characterToAdd;
-  }
+  };
 };
 
 const uniqueCharactersString = function (string) {
@@ -209,7 +207,7 @@ const getRange = function (rangeEnd) {
   return range;
 };
 
-const rangesOf = function (numbers) { 
+const rangesOf = function (numbers) {
   return numbers.map(getRange);
 };
 
@@ -224,7 +222,7 @@ const capitalizeFirstChar = function (string) {
   return string.split(" ").map(convertFirstCharToUpperCase).join(" ");
 };
 
-const capitalizedFirstLettersOf = function (strings) { 
+const capitalizedFirstLettersOf = function (strings) {
   return strings.map(capitalizeFirstChar);
 };
 
@@ -234,11 +232,11 @@ const getLength = function (word) {
   return word.length;
 };
 
-const getStringLength = function(string) {
+const getStringLength = function (string) {
   return string.split(" ").map(getLength);
 };
 
-const wordLengthsOf = function (strings) { 
+const wordLengthsOf = function (strings) {
   return strings.map(getStringLength);
 };
 
