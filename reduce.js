@@ -45,10 +45,24 @@ const maxOf = function (numbers) {
 };
 
 // sumPositiveNumbers([1, -2, 3, -4]) => 4
-const sumPositiveNumbers = function (numbers) { };
+
+const isPositive = function (number) {
+  return number > 0;
+};
+
+const sumPositiveNumbers = function (numbers) {
+  return numbers.filter(isPositive).reduce(add, 0);
+};
 
 // sumOfSquares([1, 2, 3, 4]) => 30
-const sumOfSquares = function (numbers) { };
+
+const squares = function (number) {
+  return Math.pow(number, 2);
+};
+
+const sumOfSquares = function (numbers) {
+  return numbers.map(squares).reduce(add, 0);
+};
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
 const sumOfOddNumbers = function (numbers) { };
