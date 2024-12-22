@@ -24,7 +24,7 @@ const filterAdults = function (people) {
 
 const isUserActive = function (userDetail) {
   return userDetail.active;
-}
+};
 
 const filterActiveUsers = function (users) { 
   return users.filter(isUserActive);
@@ -34,14 +34,21 @@ const filterActiveUsers = function (users) {
 
 const isGreaterThan10 = function (number) {
   return number > 10;
-}
+};
 
 const filterNumbersGreaterThanTen = function (numbers) { 
   return numbers.filter(isGreaterThan10);
 };
 
 // books with more than 200 pages [{title: "Book 1", pages: 150}, {title: "Book 2", pages: 250}] => [{title: "Book 2", pages: 250}]
-const filterLongBooks = function (books) { };
+
+const isALongBook = function (bookDetail) {
+  return bookDetail.pages > 200;
+};
+
+const filterLongBooks = function (books) { 
+  return books.filter(isALongBook);
+};
 
 // users with incomplete profiles [{username: "alice", profileComplete: true}, {username: "bob", profileComplete: false}] => [{username: "bob", profileComplete: false}]
 const filterIncompleteProfiles = function (users) { };
