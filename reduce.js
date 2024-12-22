@@ -19,13 +19,30 @@ const productOf = function (numbers) {
 };
 
 // averageOf([1, 2, 3, 4, 5]) => 3
-const averageOf = function (numbers) { };
+
+const averageOf = function (numbers) {
+  return sumOf(numbers) / numbers.length;
+};
 
 // minOf([3, 1, 4, 1, 5, 9, 2]) => 1
-const minOf = function (numbers) { };
+
+const min = function (number1, number2) {
+  return Math.min(number1, number2);
+};
+
+const minOf = function (numbers) {
+  return numbers.reduce(min, Infinity);
+};
 
 // maxOf([3, 1, 4, 1, 5, 9, 2]) => 9
-const maxOf = function (numbers) { };
+
+const max = function (number1, number2) {
+  return Math.max(number1, number2);
+};
+
+const maxOf = function (numbers) {
+  return numbers.reduce(max, -Infinity);
+};
 
 // sumPositiveNumbers([1, -2, 3, -4]) => 4
 const sumPositiveNumbers = function (numbers) { };
