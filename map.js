@@ -134,7 +134,7 @@ const countVowelsOf = function (strings) {
 
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
 
-const reversedArraysOf = function (arrays) { 
+const reversedArraysOf = function (arrays) {
   return arrays.map(function (array) {
     return array.reverse();
   });
@@ -145,36 +145,59 @@ const reversedArraysOf = function (arrays) {
 const getString = function (string, character) {
   return isVowel(character) ? string : string + character;
 };
- 
+
 const stringWithoutVowel = function (word) {
   const array = [...word];
   return array.reduce(getString, "");
 };
 
-const withoutVowelsOf = function (strings) { 
+const withoutVowelsOf = function (strings) {
   return strings.map(stringWithoutVowel);
 };
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
 // Example: cumulative sum of [1, 2, 3] is [1, 1+2, 1+2+3]
 
-const getCumulativeSum = function (array) {
+const calculateSum = function () {
   let sum = 0;
-  return array.map(function (number) {
-    return sum += number;
-  });
+
+  return function (number) {
+    sum += number;
+    return sum;
+  }
 };
 
-const cumulativeSumsOf = function (arrays) { 
- return arrays.map(getCumulativeSum);
-};  
+const getCumulativeSum = function (numbers) {
+  return numbers.map(calculateSum());
+};
+
+const cumulativeSumsOf = function (arrays) {
+  return arrays.map(getCumulativeSum);
+};
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
 const reversedWordsOf = function (strings) { };
 
 // extract unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
 // Maintain the order of their first appearance in each string
-const uniqueCharactersOf = function (strings) { };
+
+const getUniqueString = function () {
+  let string = "";
+
+  return function (character) {
+    const characterToAdd = string.includes(character) ? "" : character;
+    string = string + character;
+    return characterToAdd;
+  }
+};
+
+const uniqueCharactersString = function (string) {
+  return [...string].map(getUniqueString()).join("");
+};
+
+const uniqueCharactersOf = function (strings) {
+  return strings.map(uniqueCharactersString);
+};
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
 const rangesOf = function (numbers) { };
