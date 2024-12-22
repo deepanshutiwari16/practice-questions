@@ -90,7 +90,18 @@ const filterBelowAveragePrice = function (products) { };
 const filterRecentActiveUsers = function (users) { };
 
 // students who passed all subjects [{name: "John", subjects: [{name: "Math", passed: true}, {name: "Science", passed: true}]}, {name: "Jane", subjects: [{name: "Math", passed: false}, {name: "Science", passed: true}]}] => [{name: "John", subjects: [{name: "Math", passed: true}, {name: "Science", passed: true}]}]
-const filterStudentsWithAllSubjectsPassed = function (students) { };
+
+const isPassed = function (subjectDetail) {
+  return subjectDetail.passed;
+}
+
+const isAllSubjectPassed = function (studentDetail) {
+  return studentDetail.subjects.every(isPassed);
+}
+
+const filterStudentsWithAllSubjectsPassed = function (students) { 
+  return students.filter(isAllSubjectPassed);
+};
 
 // people whose birthday is this month [{name: "Alice", birthDate: "2024-12-01"}, {name: "Bob", birthDate: "2024-11-01"}] => [{name: "Alice", birthDate: "2024-12-01"}]
 const filterBirthdaysThisMonth = function (people) { };
