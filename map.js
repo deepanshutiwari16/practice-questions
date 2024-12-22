@@ -200,7 +200,18 @@ const uniqueCharactersOf = function (strings) {
 };
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
-const rangesOf = function (numbers) { };
+const getRange = function (rangeEnd) {
+  const range = [];
+  for (let index = 0; index < rangeEnd; index++) {
+    range.push(index);
+  }
+
+  return range;
+};
+
+const rangesOf = function (numbers) { 
+  return numbers.map(getRange);
+};
 
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
 const capitalizedFirstLettersOf = function (strings) { };
